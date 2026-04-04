@@ -2,7 +2,7 @@ import React from "react";
 import TransactionTable from "../components/transactions/TransactionTable";
 import TransactionFilters from "../components/transactions/TransactionFilters";
 import useStore from "../store/useStore";
-import AddTransactionModal from "../components/transactions/addTransactionModal";
+import AddTransactionModal from "../components/transactions/AddTransactionModal";
 
 const TransactionsPage = () => {
   const role = useStore((state) => state.role);
