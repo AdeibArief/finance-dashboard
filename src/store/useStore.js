@@ -20,12 +20,15 @@ const useStore = create((set, get) => ({
   filterCategory: "all",
   searchQuery: "",
 
-  role: "viewer",
+  role: localStorage.getItem("role") || "viewer",
 
   setFilterType: (type) => set({ filterType: type }),
   setFilterCategory: (cat) => set({ filterCategory: cat }),
   setSearchQuery: (q) => set({ searchQuery: q }),
-  setRole: (role) => set({ role }),
+  setRole: (role) => {
+    localStorage.setItem("role", role);
+    set({ role });
+  },
 
   addTransaction: (transaction) =>
     set((state) => {

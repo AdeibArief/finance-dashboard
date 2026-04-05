@@ -12,7 +12,16 @@ const App = () => {
   const [theme, setTheme] = useState(() => {
     return localStorage.getItem("theme") || "light";
   });
-  const [activePage, setActivePage] = useState("Dashboard");
+  const [activePage, setActivePage] = useState(()=>{
+    return localStorage.getItem('activePage') || 'Dashboard';
+  });
+
+  const handleSetActivePage=(page)=>{
+    setActivePage(page);
+    localStorage.setItem('activePage',page);
+  }
+
+
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleTheme = () => {
@@ -53,7 +62,7 @@ const App = () => {
         <Sidebar
           activePage={activePage}
           setActivePage={(page) => {
-            setActivePage(page);
+            handleSetActivePage(page)
             setSidebarOpen(false);
           }}
         />

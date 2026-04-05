@@ -1,4 +1,4 @@
-import { Moon, Sun } from "lucide-react";
+import { Eye, Moon, Settings, Sun } from "lucide-react";
 import useStore from "../../store/useStore";
 
 const Navbar = ({
@@ -23,14 +23,31 @@ const Navbar = ({
         <h1 className="text-lg font-semibold">{activePage}</h1>
       </div>
       <div className="flex items-center gap-3">
-        <select
+        {/* <select
           value={role}
           onChange={(e) => setRole(e.target.value)}
           className="select select-bordered select-xs lg:select-sm"
         >
           <option value="viewer">👁️ Viewer</option>
           <option value="admin">⚙️ Admin</option>
-        </select>
+        </select> */}
+
+        <button
+          className="btn btn-ghost btn-sm gap-1 w-fit"
+          onClick={() => setRole(role === "viewer" ? "admin" : "viewer")}
+        >
+          {role === "viewer" ? (
+            <>
+              <Eye size={18} />
+            </>
+          ) : (
+            <Settings size={18} />
+          )}
+
+          <span className="hidden lg:block text-sm">
+            {role === "viewer" ? "Viewer" : "Admin"}
+          </span>
+        </button>
         <button
           className="btn btn-ghost btn-sm gap-2 rounded-full w-13"
           onClick={toggleTheme}
