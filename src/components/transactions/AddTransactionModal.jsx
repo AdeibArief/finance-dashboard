@@ -5,11 +5,12 @@ const emptyForm = {
   description: "",
   amount: "",
   type: "expense",
-  category: "food",
+  category: "Add Category",
   date: new Date().toISOString().split("T")[0],
 };
 
 const categories = [
+  "Add Category",
   "Salary",
   "Freelance",
   "Housing",
@@ -24,14 +25,13 @@ const AddTransactionModal = () => {
   const addTransaction = useStore((state) => state.addTransaction);
   const [form, setForm] = useState(emptyForm);
   const [open, setOpen] = useState(false);
-  
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = () => {
-    if (!form.description || !form.amount || parseInt(form.amount) <=0 ) return;
+    if (!form.description || !form.amount || parseInt(form.amount) <= 0) return;
     addTransaction({ ...form, amount: parseFloat(form.amount) });
     setForm(emptyForm);
     setOpen(false);
@@ -43,8 +43,10 @@ const AddTransactionModal = () => {
       </button>
       {open && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-          <div className="bg-base-100 border border-base-300 rounded-2xl p-6 w-full max-w-md shadow-xl">
-            <h3 className="text-lg font-semibold mb-4 text-center">Add Transaction</h3>
+          <div className="bg-base-100 border border-base-300 rounded-2xl p-6 w-full max-w-md shadow-xl overflow-y-auto max-h-[90vh]">
+            <h3 className="text-lg font-semibold mb-4 text-center">
+              Add Transaction
+            </h3>
             <div className="flex flex-col gap-3">
               <input
                 name="description"

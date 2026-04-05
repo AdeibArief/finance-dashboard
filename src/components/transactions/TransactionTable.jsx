@@ -1,4 +1,6 @@
+import { useState } from "react";
 import useStore from "../../store/useStore";
+import EditTransactionModel from "./EditTransactionModel";
 
 const formatCurrency = (amount) => {
   if (amount === undefined || amount === null || isNaN(amount)) return "₹0";
@@ -15,6 +17,7 @@ const formatDate = (date) =>
 const TransactionTable = () => {
   const role = useStore((state) => state.role);
   const deleteTransaction = useStore((state) => state.deleteTransaction);
+  const [editingTransaction, setEditingTransaction] = useState(null);
 
   const transactions = useStore((state) => state.transactions);
   const filterType = useStore((state) => state.filterType);
@@ -86,12 +89,20 @@ const TransactionTable = () => {
                 </td>
                 {role === "admin" && (
                   <td>
+                    <div className="flex flex-row gap-2 items-center">
+                    <button
+                      className="btn btn-ghost btn-xs text-primary"
+                      onClick={()=>setEditingTransaction(t)}
+                    >
+                      Edit
+                    </button>
                     <button
                       className="btn btn-ghost btn-xs text-error"
                       onClick={() => deleteTransaction(t.id)}
                     >
                       Delete
                     </button>
+                    </div>
                   </td>
                 )}
               </tr>
@@ -99,6 +110,12 @@ const TransactionTable = () => {
           </tbody>
         </table>
       </div>
+      {editingTransaction && (
+        <EditTransactionModel
+          transaction={editingTransaction}
+          onClose={()=>setEditingTransaction(null)}
+        />
+      )}
     </div>
   );
 };

@@ -48,7 +48,7 @@ const App = () => {
         ></div>
       )}
       <div
-        className={`fixed lg:static z-30 h-full transition-transform duration-300 ${sidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}`}
+        className={`fixed lg:static z-30 h-full lg:h-auto transition-transform duration-300 ${sidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}`}
       >
         <Sidebar
           activePage={activePage}
