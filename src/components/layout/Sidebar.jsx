@@ -9,7 +9,7 @@ import React from "react";
 const Sidebar = ({ activePage, setActivePage }) => {
   return (
     <aside className="w-64 h-full bg-base-100 min-h-screen border-r border-base-300 flex flex-col p-4 gap-2">
-      <div className="text-xl py-4 font-bold px-2 mb-2">
+      <div className="text-xl  font-bold px-2 mb-4">
         <a href="/"> 💰Fintrack</a>
       </div>
       {navItems.map((item) => (
