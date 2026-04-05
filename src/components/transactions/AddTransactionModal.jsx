@@ -24,6 +24,7 @@ const AddTransactionModal = () => {
   const addTransaction = useStore((state) => state.addTransaction);
   const [form, setForm] = useState(emptyForm);
   const [open, setOpen] = useState(false);
+  
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -43,7 +44,7 @@ const AddTransactionModal = () => {
       {open && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
           <div className="bg-base-100 border border-base-300 rounded-2xl p-6 w-full max-w-md shadow-xl">
-            <h3 className="text-lg font-semibold mb-4">Add Transaction</h3>
+            <h3 className="text-lg font-semibold mb-4 text-center">Add Transaction</h3>
             <div className="flex flex-col gap-3">
               <input
                 name="description"

@@ -1,12 +1,26 @@
 import useStore from "../../store/useStore";
 
-const Navbar = ({ theme, toggleTheme, activePage }) => {
+const Navbar = ({
+  theme,
+  toggleTheme,
+  activePage,
+  sidebarOpen,
+  setSidebarOpen,
+}) => {
   const role = useStore((state) => state.role);
   const setRole = useStore((state) => state.setRole);
 
   return (
     <header className="h-16 bg-base-100 border-b border-base-100 flex items-center justify-between px-6">
+      <div className="flex items-center gap-3">
+        <button
+          onClick={() => setSidebarOpen(!sidebarOpen)}
+          className="btn btn-ghost btn-sm lg:hidden"
+        >
+          {sidebarOpen ? "✕" : "☰"}
+        </button>
       <h1 className="text-lg font-semibold">{activePage}</h1>
+      </div>
       <div className="flex items-center gap-4">
         <select
           value={role}
