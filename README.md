@@ -10,8 +10,20 @@ A finance dashboard built as part of a frontend internship assignment. The goal 
 
 - React + Vite
 - Tailwind CSS v4 + DaisyUI
-- Zustand
-- Recharts
+- Zustand (State management)
+- Recharts (Charts)
+- Lucide React (icons)
+
+## Mock Data
+
+| Field       | Description                                                                          |
+| ----------- | ------------------------------------------------------------------------------------ |
+| id          | Unique identifier                                                                    |
+| date        | Transaction date (YYYY-MM-DD)                                                        |
+| description | What the transaction was for                                                         |
+| amount      | Amount in INR                                                                        |
+| type        | Either income or expense                                                             |
+| category    | One of: Salary, Freelance, Housing, Food, Entertainment, Utilities, Health, Shopping |
 
 ## Getting Started
 
@@ -22,6 +34,24 @@ npm install
 npm run dev
 ```
 
+## Features
+
+| Feature                                   | Status |
+| ----------------------------------------- | ------ |
+| Dashboard with summary cards              | ✔️     |
+| Balance trend line chart                  | ✔️     |
+| Spending breakdown donut chart            | ✔️     |
+| Transactions table with search and filter | ✔️     |
+| CSV export (respects active filters)      | ✔️     |
+| Role based UI (Viewer/Admin)              | ✔️     |
+| Add, edit and delete transactions (Admin) | ✔️     |
+| Insights page with 6 observation cards    | ✔️     |
+| Dark mode                                 | ✔️     |
+| localStorage persistance                  | ✔️     |
+| Responsive with mobile hamburger menu     | ✔️     |
+| Page fade transitions                     | ✔️     |
+| Empty state handling                      | ✔️     |
+
 ## What I Built
 
 | Section      | What it does                                                                                                                                                  |
@@ -31,6 +61,33 @@ npm run dev
 | Insights     | 6 cards derived from transaction data — highest spending category, monthly comparison, savings rate, average expense, total income and biggest single expense |
 | Role System  | Navbar toggle switches between Viewer and Admin. Admin unlocks Add and Delete transaction controls. Viewer sees data only                                     |
 
-## How I Approached It
+## Role Access
 
-I kept the state in one Zustand store — transactions, filters, search query and role all in one place. Components subscribe to only what they need so filtering is reactive and instant without any extra logic.
+| Feature            | Viewer | Admin |
+| ------------------ | ------ | ----- |
+| View Dashboard     | ✔️     | ✔️    |
+| View Transactions  | ✔️     | ✔️    |
+| Search and filter  | ✔️     | ✔️    |
+| Export CSV         | ✔️     | ✔️    |
+| Add transaction    | ❌     | ✔️    |
+| Edit transaction   | ❌     | ✔️    |
+| Delete transaction | ❌     | ✔️    |
+
+## How State works
+
+Everything lives in one Zustand store — transactions, filters, search and role. Components only subscribe to what they need so updates are instant.
+
+For persistence I skipped Zustand's persist middleware andjust used localStorage directly. On load it checks localStorage first and falls back to mock data if nothing is there. Every add, edit and delete saves back to localStorage.
+
+## Folder Structure
+
+```
+src/
+    components/
+        layout/         -> Sidebar, Navbar
+        dashboard/      -> SummaryCards, BalanceTrendChart, SpendingChart
+        transactions/   -> TransactionTable, TransactionsFilters, AddTransactionModal,EditTransactionModal
+    pages/              -> DashboardPage, TransactionsPage, InsightsPage
+    store/              -> useStore.js
+    data/               -> mockData.js (24 transactions across 3 months)
+```
