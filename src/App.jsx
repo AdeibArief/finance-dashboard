@@ -49,7 +49,7 @@ const App = () => {
   };
 
   return (
-    <div data-theme={theme} className=" flex min-h-screen bg-base-200 overflow-scroll ">
+    <div data-theme={theme} className=" flex min-h-screen bg-base-200 overflow-auto ">
       {sidebarOpen && (
         <div
           className="fixed inset-0 bg-black/50 z-20 lg:hidden"
