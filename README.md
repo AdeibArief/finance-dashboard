@@ -63,15 +63,15 @@ npm run dev
 
 ## Role Access
 
-| Feature            | Viewer | Admin |
-| ------------------ | ------ | ----- |
-| View Dashboard     | ✔️     | ✔️    |
-| View Transactions  | ✔️     | ✔️    |
-| Search and filter  | ✔️     | ✔️    |
-| Export CSV         | ✔️     | ✔️    |
-| Add transaction    | ❌     | ✔️    |
-| Edit transaction   | ❌     | ✔️    |
-| Delete transaction | ❌     | ✔️    |
+| Feature            | Viewer (👁️) | Admin (⚙️) |
+| ------------------ | ----------- | ---------- |
+| View Dashboard     | ✔️          | ✔️         |
+| View Transactions  | ✔️          | ✔️         |
+| Search and filter  | ✔️          | ✔️         |
+| Export CSV         | ✔️          | ✔️         |
+| Add transaction    | ❌          | ✔️         |
+| Edit transaction   | ❌          | ✔️         |
+| Delete transaction | ❌          | ✔️         |
 
 ## How State works
 
