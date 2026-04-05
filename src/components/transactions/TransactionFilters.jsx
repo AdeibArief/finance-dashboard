@@ -56,53 +56,58 @@ const TransactionFilters = () => {
   });
 
   return (
-    <div className="bg-base-100 rounded-2xl p-4 border border-base-300 shadow-sm flex flex-wrap gap-3 items-center mb-4">
+    <div className="bg-base-100 rounded-2xl p-4 border border-base-300 shadow-sm flex flex-col lg:flex-row gap-3 items-center mb-4">
       <input
         type="text"
         placeholder="Search transactions"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
-        className="input input-bordered input-sm flex-1 min-w-48"
+        className="input input-bordered input-sm w-full"
       />
 
-      <select
-        value={filterType}
-        onChange={(e) => setFilterType(e.target.value)}
-        className="select select-bordered select-sm"
-      >
-        <option value="all">All types</option>
-        <option value="income">Income</option>
-        <option value="expense">Expense</option>
-      </select>
+      <div className="flex gap-2">
+        <select
+          value={filterType}
+          onChange={(e) => setFilterType(e.target.value)}
+          className="select select-bordered select-sm lg:w-36"
+        >
+          <option value="all">All types</option>
+          <option value="income">Income</option>
+          <option value="expense">Expense</option>
+        </select>
 
-      <select
-        value={filterCategory}
-        onChange={(e) => setFilterCategory(e.target.value)}
-        className="select select-bordered select-sm"
-      >
-        {categories.map((cat) => (
-          <option value={cat} key={cat}>
-            {cat === "all" ? "All Categories" : cat}
-          </option>
-        ))}
-      </select>
-      <button
-        onClick={() => {
-          setFilterCategory("all");
-          setFilterType("all");
-          setSearchQuery("");
-        }}
-        className="btn btn-ghost btn-sm"
-      >
-        Clear
-      </button>
+        <select
+          value={filterCategory}
+          onChange={(e) => setFilterCategory(e.target.value)}
+          className="select select-bordered select-sm lg:w-44"
+        >
+          {categories.map((cat) => (
+            <option value={cat} key={cat}>
+              {cat === "all" ? "All Categories" : cat}
+            </option>
+          ))}
+        </select>
+      </div>
 
-      <button
-        className="btn btn-outline btn-sm"
-        onClick={() => exportToCsv(filteredTransactions)}
-      >
-        Export
-      </button>
+      <div className="flex gap-2">
+        <button
+          onClick={() => {
+            setFilterCategory("all");
+            setFilterType("all");
+            setSearchQuery("");
+          }}
+          className="btn btn-ghost btn-sm flex-1"
+        >
+          Clear
+        </button>
+
+        <button
+          className="btn btn-outline btn-sm flex-1"
+          onClick={() => exportToCsv(filteredTransactions)}
+        >
+          Export
+        </button>
+      </div>
     </div>
   );
 };

@@ -49,7 +49,7 @@ const App = () => {
   };
 
   return (
-    <div data-theme={theme} className=" flex min-h-screen bg-base-200 ">
+    <div data-theme={theme} className=" flex min-h-screen bg-base-200 overflow-scroll ">
       {sidebarOpen && (
         <div
           className="fixed inset-0 bg-black/50 z-20 lg:hidden"
@@ -57,7 +57,7 @@ const App = () => {
         ></div>
       )}
       <div
-        className={`fixed lg:static z-30 h-full lg:h-auto transition-transform duration-300 ${sidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}`}
+        className={`fixed lg:relative z-30 h-full bg-base-100 min-h-screen lg:h-auto transition-transform duration-300 ${sidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}`}
       >
         <Sidebar
           activePage={activePage}

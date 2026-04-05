@@ -23,17 +23,9 @@ const Navbar = ({
         <h1 className="text-lg font-semibold">{activePage}</h1>
       </div>
       <div className="flex items-center gap-3">
-        {/* <select
-          value={role}
-          onChange={(e) => setRole(e.target.value)}
-          className="select select-bordered select-xs lg:select-sm"
-        >
-          <option value="viewer">👁️ Viewer</option>
-          <option value="admin">⚙️ Admin</option>
-        </select> */}
 
         <button
-          className="btn btn-ghost btn-sm gap-1 w-fit"
+          className="btn btn-ghost btn-sm gap-1 w-fit rounded-2xl"
           onClick={() => setRole(role === "viewer" ? "admin" : "viewer")}
         >
           {role === "viewer" ? (
