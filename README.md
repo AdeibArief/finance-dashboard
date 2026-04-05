@@ -1,6 +1,6 @@
 # Fintrack Dashboard
 
-A finance dashboard built as part of a frontend internship assignment. The goal was to build something clean, functional and easy to understand — not overly complex.
+A finance dashboard built as part of a frontend internship assignment using React, Vite, Tailwind CSS V4, DaisyUI, Zustand and recharts.
 
 ## Live Demo
 
