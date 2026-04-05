@@ -20,7 +20,7 @@ const useStore = create((set, get) => ({
   filterCategory: "all",
   searchQuery: "",
 
-  role: localStorage.getItem("role") || "viewer",
+  role: localStorage.getItem("role") || "Admin",
 
   setFilterType: (type) => set({ filterType: type }),
   setFilterCategory: (cat) => set({ filterCategory: cat }),
