@@ -1,10 +1,12 @@
+import { BarChart2, CreditCard, Lightbulb } from "lucide-react";
+
 const navItems = [
-  { label: "Dashboard", icon: "📊" },
-  { label: "Transactions", icon: "💳" },
-  { label: "Insights", icon: "💡" },
+  { label: "Dashboard", icon: <BarChart2 size={20} /> },
+  { label: "Transactions", icon: <CreditCard size={20} /> },
+  { label: "Insights", icon: <Lightbulb size={20}/> },
+
 ];
 
-import React from "react";
 
 const Sidebar = ({ activePage, setActivePage }) => {
   return (

@@ -49,7 +49,7 @@ const TransactionTable = () => {
     <div className="bg-base-100 rounded-2xl border border-base-300 shadow-sm overflow-x-auto">
       <div className="overflow-x-auto">
         <table className="table w-full">
-          <thead className="bg-base-300">
+          <thead className="bg-base-300 text-base-content/70">
             <tr>
               <th>Date</th>
               <th>Description</th>
