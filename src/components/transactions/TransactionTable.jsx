@@ -49,14 +49,14 @@ const TransactionTable = () => {
     <div className="bg-base-100 rounded-2xl border border-base-300 shadow-sm overflow-x-auto">
       <div className="overflow-x-auto">
         <table className="table w-full">
-          <thead className="bg-base-200">
+          <thead className="bg-base-300">
             <tr>
               <th>Date</th>
               <th>Description</th>
               <th className="hidden sm:table-cell">Category</th>
               <th>Type</th>
               <th>Amount</th>
-              {role === "admin" && <th>Actions</th>}
+              {role === "admin" && <th className="w-24">Actions</th>}
             </tr>
           </thead>
           <tbody>
