@@ -10,7 +10,7 @@ const App = () => {
   const role = useStore((state) => state.role);
   console.log("state role", role);
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem("theme") || "light";
+    return localStorage.getItem("theme") || "dark";
   });
   const [activePage, setActivePage] = useState(()=>{
     return localStorage.getItem('activePage') || 'Dashboard';
