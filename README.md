@@ -59,7 +59,7 @@ npm run dev
 | Dashboard    | Summary cards with Balance, Income, Expenses and Savings Rate. Line chart for balance trend and donut chart for spending by category                          |
 | Transactions | Full transaction table with live search, filter by type and category, CSV export that respects active filters                                                 |
 | Insights     | 6 cards derived from transaction data — highest spending category, monthly comparison, savings rate, average expense, total income and biggest single expense |
-| Role System  | Navbar toggle switches between Viewer and Admin. Admin unlocks Add and Delete transaction controls. Viewer sees data only                                     |
+| Role System  | Navbar toggle switches between Viewer and Admin. Admin unlocks Add,Edit and Delete transaction controls. Viewer sees data only                                     |
 
 ## Role Access
 
