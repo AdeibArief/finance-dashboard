@@ -1,4 +1,4 @@
-# Fintrack Dashboard
+# Fintrack
 
 A finance dashboard built as part of a frontend internship assignment using React, Vite, Tailwind CSS V4, DaisyUI, Zustand and recharts.
 
