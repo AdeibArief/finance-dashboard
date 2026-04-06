@@ -5,7 +5,6 @@ import SummaryCards from "../components/dashboard/SummaryCards";
 import React from "react";
 
 const DashboardPage = ({ theme }) => {
-
   return (
     <div>
       <p className="text-base-content/50 mb-6">
