@@ -46,14 +46,14 @@ const TransactionTable = () => {
   }
 
   return (
-    <div className="bg-base-100 rounded-2xl border border-base-300 shadow-sm overflow-hidden">
-      <div className="overflow-x-hidden">
+    <div className="bg-base-100 rounded-2xl border border-base-300 shadow-sm overflow-x-auto">
+      <div className="overflow-x-auto">
         <table className="table w-full">
           <thead className="bg-base-200">
             <tr>
               <th>Date</th>
               <th>Description</th>
-              <th>Category</th>
+              <th className="hidden sm:table-cell">Category</th>
               <th>Type</th>
               <th>Amount</th>
               {role === "admin" && <th>Actions</th>}
@@ -69,7 +69,7 @@ const TransactionTable = () => {
                   {formatDate(t.date)}
                 </td>
                 <td className="text-medium">{t.description}</td>
-                <td>
+                <td className="hidden sm:table-cell">
                   <span className="badge badge-ghost badge-sm">
                     {t.category}
                   </span>

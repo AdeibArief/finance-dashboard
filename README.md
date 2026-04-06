@@ -47,7 +47,7 @@ npm run dev
 | Add, edit and delete transactions (Admin) | ✔️     |
 | Insights page with 6 observation cards    | ✔️     |
 | Dark mode                                 | ✔️     |
-| localStorage persistance                  | ✔️     |
+| localStorage persistence                  | ✔️     |
 | Responsive with mobile hamburger menu     | ✔️     |
 | Page fade transitions                     | ✔️     |
 | Empty state handling                      | ✔️     |
@@ -77,7 +77,7 @@ npm run dev
 
 Everything lives in one Zustand store — transactions, filters, search and role. Components only subscribe to what they need so updates are instant.
 
-For persistence I skipped Zustand's persist middleware andjust used localStorage directly. On load it checks localStorage first and falls back to mock data if nothing is there. Every add, edit and delete saves back to localStorage.
+For persistence I skipped Zustand's persist middleware and just used localStorage directly. On load it checks localStorage first and falls back to mock data if nothing is there. Every add, edit and delete saves back to localStorage.
 
 ## Folder Structure
 
